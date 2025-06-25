@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Firebase Calculator</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='Style.css')}}">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1> Calculator using firebase connectivity</h1>
+        <form method="POST">
+            <input type="number" step="any" name="num1" placeholder="Enter number 1" required>
+            <input type="number" step="any" name="num2" placeholder="Enter number 2" required>
+            <select name="operation" required>
+                <option value="add">Add (+)</option>
+                <option value="sub">Subtraction (-)</option>
+                <option value="mul">Multiplication (*)</option>
+                <option value="div">Division (/)</option>
+            </select>
+            <button type="submit">Calculator</button>
+        </form>
+
+        {% if result != '' %}
+        <div class="result">Result: {{result}}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

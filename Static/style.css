@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI',Tahoma, Geneva, Verdana, sans-serif;
+
+    background-image: url("finance-elements-arrangement-with-empty-notepad-calculator.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* add a dark overlay for better contrast */
+    position: relative;
+}
+body::before{
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(30,30,60, 0.35 );
+    z-index: 0;
+    pointer-events: none;
+
+}
+
+.container{
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px) saturate(180%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 40px 48px;
+    text-align: center;
+    width: 370px;
+    transition: box-shodow 0.3s;
+}
+.container:hover{
+    box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.45);
+}
+
+h1{
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: #1a1a2e;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+}
+input,
+select{
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border: 1.5px solid #bdbdbd;
+    border-radius: 10px;
+    font-size: 17px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.7);
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+input:focus,
+select:focus{
+    border: 1.5px solid #0078ff;
+    box-shadow: 0 0 0 2px rgba(0, 123,255 0.15);
+    background: rgba(255, 255, 255, 0.95);
+}
+button{
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #0078ff 0%, #00c6ff 100%);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 123,255 ,0.10);
+    transition: background 0.3s,transform 0.15s,box-shadow 0.3s;
+    letter-spacing: 0.5px;
+    outline: none;
+}
+button:hover, button:focus{
+    background: linear-gradient(90deg, #0056b3 0%, #00aaff 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 2px rgba(0, 123,255 0.18);
+}
+.result{
+    margin-top: 24px;
+    font-size: 19px;
+    color: #0a7d2c;
+    font-weight: 0 2px 8px rgba(0,0,0,0.07);
+    letter-spacing: 0.2px;
+    animation: fadeIn 0.7s;
+}
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to{ opacity: 1; transform: translateY(0);}
+}
+/* .logo{
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    transition: transform 0.3s;
+} */
